@@ -8,6 +8,7 @@ import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
 import { ArrowUp } from "lucide-react";
 import { Helmet } from "react-helmet";
+import FloatingIcons from "@/components/FloatingIcons";
 
 const Index = () => {
   const [showScrollToTop, setShowScrollToTop] = useState(false);
@@ -69,10 +70,14 @@ const Index = () => {
         <link rel="canonical" href="https://devhire.com" />
       </Helmet>
 
-      <div className="flex flex-col min-h-screen" ref={sectionsRef}>
+      <div className="flex flex-col min-h-screen relative overflow-hidden" ref={sectionsRef}>
+        <div className="absolute inset-0 z-0">
+          <FloatingIcons />
+        </div>
+        
         <Header />
         
-        <main className="flex-grow">
+        <main className="flex-grow relative z-10">
           <Hero />
           <Services />
           <About />

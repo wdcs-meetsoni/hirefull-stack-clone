@@ -43,28 +43,28 @@ const Header = () => {
         <div className="flex items-center justify-between">
           <a
             href="/"
-            className="text-2xl font-display font-bold tracking-tight animate-fade-in"
+            className="text-xl font-display font-bold tracking-tight animate-fade-in flex items-center"
           >
-            <span className="text-gradient">Dev</span>Hire
+            <span className="text-indigo-700">HIRE</span>
+            <span className="text-xs bg-indigo-700 text-white px-1 mx-1">&lt;FULLSTACK&gt;</span>
+            <span className="text-indigo-700">DEVELOPERINDIA</span>
           </a>
 
           {/* Desktop Navigation */}
-          <nav className="hidden md:flex items-center space-x-1 animate-fade-in">
-            <NavLink href="#home">Home</NavLink>
-            <NavLink href="#services">Services</NavLink>
-            <NavLink href="#about">About</NavLink>
-            <NavLink href="#contact">Contact</NavLink>
+          <nav className="hidden md:flex items-center space-x-6 animate-fade-in">
+            <NavLink href="#home">ABOUT US</NavLink>
+            <NavLink href="#services">HIRE RESOURCES</NavLink>
+            <NavLink href="#portfolio">PORTFOLIO</NavLink>
           </nav>
 
           {/* CTA Button */}
           <div className="hidden md:block animate-fade-in">
             <Button 
-              variant="secondary"
+              variant="talent"
               onClick={handleHireDeveloper}
-              className="transition-all duration-300 shadow-md hover:shadow-lg hover:scale-105"
+              className="px-6 py-2 transition-all duration-300 shadow-md hover:shadow-lg"
             >
-              Hire Developer
-              <ArrowRight className="ml-1 h-4 w-4" />
+              HIRE A TALENT
             </Button>
           </div>
 
@@ -92,26 +92,22 @@ const Header = () => {
         <div className="flex flex-col h-full pt-20 px-6">
           <nav className="flex flex-col space-y-4">
             <NavLink href="#home" onClick={closeMobileMenu}>
-              Home
+              ABOUT US
             </NavLink>
             <NavLink href="#services" onClick={closeMobileMenu}>
-              Services
+              HIRE RESOURCES
             </NavLink>
-            <NavLink href="#about" onClick={closeMobileMenu}>
-              About
-            </NavLink>
-            <NavLink href="#contact" onClick={closeMobileMenu}>
-              Contact
+            <NavLink href="#portfolio" onClick={closeMobileMenu}>
+              PORTFOLIO
             </NavLink>
           </nav>
           <div className="mt-8">
             <Button 
-              variant="secondary"
+              variant="talent"
               className="w-full transition-all duration-300 shadow-md"
               onClick={handleHireDeveloper}
             >
-              Hire Developer
-              <ArrowRight className="ml-1 h-4 w-4" />
+              HIRE A TALENT
             </Button>
           </div>
         </div>
