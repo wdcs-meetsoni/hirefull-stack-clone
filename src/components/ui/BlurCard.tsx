@@ -7,6 +7,7 @@ interface BlurCardProps {
   className?: string;
   hoverEffect?: boolean;
   delayReveal?: number;
+  style?: React.CSSProperties;
 }
 
 const BlurCard = ({
@@ -14,6 +15,7 @@ const BlurCard = ({
   className,
   hoverEffect = true,
   delayReveal = 0,
+  style,
 }: BlurCardProps) => {
   const [isVisible, setIsVisible] = useState(false);
   const [isHovered, setIsHovered] = useState(false);
@@ -56,6 +58,7 @@ const BlurCard = ({
         isHovered && "scale-[1.02]",
         className
       )}
+      style={style}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
