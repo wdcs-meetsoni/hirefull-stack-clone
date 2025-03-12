@@ -1,8 +1,7 @@
-
 import { useState, useEffect, useRef } from "react";
 import { Button } from "@/components/ui/button";
 import BlurCard from "@/components/ui/BlurCard";
-import { Users, Award, Clock, Briefcase } from "lucide-react";
+import { Users, Award, Clock, Briefcase, Info } from "lucide-react";
 
 const About = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -29,6 +28,10 @@ const About = () => {
       observer.disconnect();
     };
   }, []);
+
+  const handleLearnMore = () => {
+    window.open("https://example.com/about", "_blank");
+  };
 
   const stats = [
     {
@@ -88,7 +91,11 @@ const About = () => {
               ))}
             </div>
             
-            <Button className="mt-4 bg-primary hover:bg-primary/90 transition-all duration-300">
+            <Button 
+              className="mt-4 bg-gradient-to-r from-indigo-500 to-purple-600 hover:from-indigo-600 hover:to-purple-700 text-white transition-all duration-300 shadow-md hover:shadow-lg"
+              onClick={handleLearnMore}
+            >
+              <Info className="mr-2 h-4 w-4" />
               Learn More About Us
             </Button>
           </div>

@@ -2,7 +2,7 @@
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import NavLink from "@/components/ui/NavLink";
-import { Menu, X } from "lucide-react";
+import { Menu, X, ArrowRight } from "lucide-react";
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -24,6 +24,11 @@ const Header = () => {
 
   const closeMobileMenu = () => {
     setIsMobileMenuOpen(false);
+  };
+
+  const handleHireDeveloper = () => {
+    document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" });
+    closeMobileMenu();
   };
 
   return (
@@ -54,9 +59,12 @@ const Header = () => {
           {/* CTA Button */}
           <div className="hidden md:block animate-fade-in">
             <Button 
-              className="bg-primary hover:bg-primary/90 transition-all duration-300 shadow-md hover:shadow-lg hover:scale-105"
+              variant="secondary"
+              onClick={handleHireDeveloper}
+              className="transition-all duration-300 shadow-md hover:shadow-lg hover:scale-105"
             >
               Hire Developer
+              <ArrowRight className="ml-1 h-4 w-4" />
             </Button>
           </div>
 
@@ -98,10 +106,12 @@ const Header = () => {
           </nav>
           <div className="mt-8">
             <Button 
-              className="w-full bg-primary hover:bg-primary/90 transition-all duration-300"
-              onClick={closeMobileMenu}
+              variant="secondary"
+              className="w-full transition-all duration-300 shadow-md"
+              onClick={handleHireDeveloper}
             >
               Hire Developer
+              <ArrowRight className="ml-1 h-4 w-4" />
             </Button>
           </div>
         </div>

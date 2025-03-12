@@ -36,6 +36,14 @@ const Hero = () => {
     setIsLoaded(true);
   }, []);
 
+  const handleGetStarted = () => {
+    document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" });
+  };
+
+  const handleViewServices = () => {
+    document.getElementById("services")?.scrollIntoView({ behavior: "smooth" });
+  };
+
   return (
     <section id="home" className="pt-32 pb-16 md:pt-40 md:pb-24">
       <div className="container px-4 md:px-6">
@@ -53,7 +61,9 @@ const Hero = () => {
             <div className="flex flex-col sm:flex-row gap-4 pt-4">
               <Button 
                 size="lg" 
-                className="group bg-primary hover:bg-primary/90 text-white transition-all duration-300 shadow-md hover:shadow-lg hover:scale-105"
+                variant="default"
+                onClick={handleGetStarted}
+                className="group shadow-md hover:shadow-lg hover:scale-105"
               >
                 <span>Get Started</span>
                 <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
@@ -61,6 +71,7 @@ const Hero = () => {
               <Button 
                 size="lg" 
                 variant="outline" 
+                onClick={handleViewServices}
                 className="border-primary text-primary hover:bg-primary/5 transition-all duration-300"
               >
                 View Services

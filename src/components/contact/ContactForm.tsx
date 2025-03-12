@@ -126,7 +126,8 @@ const ContactForm = ({ isVisible }: ContactFormProps) => {
         <Button 
           type="submit"
           disabled={isSubmitting}
-          className="w-full bg-primary hover:bg-primary/90 transition-all duration-300"
+          variant="success"
+          className="w-full shadow-md hover:shadow-lg transition-all duration-300"
         >
           {isSubmitting ? (
             <span className="flex items-center">
