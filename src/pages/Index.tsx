@@ -1,5 +1,5 @@
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import Header from "@/components/Header";
 import Hero from "@/components/Hero";
 import Services from "@/components/Services";
@@ -11,6 +11,7 @@ import { Helmet } from "react-helmet";
 
 const Index = () => {
   const [showScrollToTop, setShowScrollToTop] = useState(false);
+  const sectionsRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -18,7 +19,31 @@ const Index = () => {
     };
 
     window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
+    
+    // Set up intersection observer for animations
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('animate-fade-up');
+            entry.target.classList.remove('opacity-0');
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.1, rootMargin: '0px 0px -100px 0px' }
+    );
+    
+    // Observe all elements with animate-on-scroll class
+    document.querySelectorAll('.animate-on-scroll').forEach(el => {
+      el.classList.add('opacity-0');
+      observer.observe(el);
+    });
+    
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+      observer.disconnect();
+    };
   }, []);
 
   const scrollToTop = () => {
@@ -44,7 +69,7 @@ const Index = () => {
         <link rel="canonical" href="https://devhire.com" />
       </Helmet>
 
-      <div className="flex flex-col min-h-screen">
+      <div className="flex flex-col min-h-screen" ref={sectionsRef}>
         <Header />
         
         <main className="flex-grow">
@@ -58,7 +83,7 @@ const Index = () => {
         
         <button
           onClick={scrollToTop}
-          className={`fixed right-6 bottom-6 bg-primary text-white p-3 rounded-full shadow-lg transition-all duration-300 z-40 ${
+          className={`fixed right-6 bottom-6 bg-orange-500 text-white p-3 rounded-full shadow-lg transition-all duration-300 z-40 ${
             showScrollToTop ? "opacity-100 scale-100" : "opacity-0 scale-75 pointer-events-none"
           }`}
           aria-label="Scroll to top"
