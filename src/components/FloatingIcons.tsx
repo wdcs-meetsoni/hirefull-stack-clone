@@ -71,7 +71,7 @@ const FloatingIcons = () => {
       
       ctx.save();
       ctx.font = `${icon.size}px Arial`;
-      ctx.fillStyle = 'rgba(200, 200, 200, 0.2)';
+      ctx.fillStyle = 'rgba(249, 115, 22, 0.1)'; // Orange color with low opacity
       
       // Draw the tech icon or symbol
       ctx.fillText(icon.icon, icon.x, icon.y);
@@ -114,7 +114,7 @@ const FloatingIcons = () => {
     <canvas 
       ref={canvasRef} 
       className="w-full h-full opacity-30"
-      style={{ background: 'linear-gradient(to bottom right, #f5f5f5, #ffffff)' }}
+      style={{ background: 'linear-gradient(to bottom right, #fff8f0, #ffffff)' }}
     />
   );
 };

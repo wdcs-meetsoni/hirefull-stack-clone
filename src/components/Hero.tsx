@@ -29,7 +29,7 @@ const TypingText = ({ text }: { text: string }) => {
   return (
     <span className="relative">
       {displayedText}
-      <span className="absolute -right-1 top-0 w-1 h-full bg-indigo-600 animate-pulse" 
+      <span className="absolute -right-1 top-0 w-1 h-full bg-orange-500 animate-pulse" 
         style={{ opacity: currentIndex < text.length ? 1 : 0 }}>
       </span>
     </span>
@@ -80,20 +80,20 @@ const Hero = () => {
       <div className="container px-4 md:px-6">
         <div className="grid grid-cols-1 lg:grid-cols-1 gap-12 items-center">
           <div className="max-w-4xl mx-auto space-y-6 text-center animate-item">
-            <div className="inline-block rounded-full bg-indigo-500/10 px-3 py-1 text-sm font-medium text-indigo-600">
+            <div className="inline-block rounded-full bg-orange-500/10 px-3 py-1 text-sm font-medium text-orange-600">
               Professional Development Services
             </div>
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight tracking-tighter text-center">
-              Hire <span className="text-indigo-700">Full Stack</span> Developers
-              <br />for tailored <span className="text-indigo-700">End-to-End</span> Solution
+              Hire <span className="text-orange-500">Full Stack</span> Developers
+              <br />for tailored <span className="text-orange-500">End-to-End</span> Solution
             </h1>
             <p className="text-xl text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
               Get access to elite developers who can transform your ideas into powerful, scalable applications with modern technology stacks.
             </p>
-            <div className="flex flex-col sm:flex-row justify-center gap-4 pt-4">
+            <div className="flex flex-row justify-center sm:justify-end gap-4 pt-4">
               <Button 
                 size="lg" 
-                variant="secondary"
+                variant="default"
                 onClick={handleGetStarted}
                 className="group shadow-md hover:shadow-lg transition-all duration-300"
               >
@@ -104,7 +104,7 @@ const Hero = () => {
                 size="lg" 
                 variant="outline" 
                 onClick={handleViewServices}
-                className="border-indigo-500 text-indigo-500 hover:bg-indigo-50 transition-all duration-300"
+                className="border-orange-500 text-orange-500 hover:bg-orange-50 transition-all duration-300"
               >
                 View Services
               </Button>
@@ -114,7 +114,7 @@ const Hero = () => {
         
         {/* OUR SERVICES section */}
         <div className="mt-24 text-center animate-item">
-          <h2 className="text-2xl md:text-3xl font-bold mb-8">OUR SERVICES</h2>
+          <h2 className="text-2xl md:text-3xl font-bold mb-8 text-orange-600">OUR SERVICES</h2>
           <div className="flex flex-wrap justify-center gap-4">
             {[
               { name: 'Mobile App Developers', icon: '📱' },
@@ -125,7 +125,7 @@ const Hero = () => {
             ].map((service, index) => (
               <div 
                 key={index} 
-                className="inline-flex items-center px-4 py-2 rounded-full bg-white shadow-md hover:shadow-lg transition-all duration-300 cursor-pointer border border-gray-200"
+                className="inline-flex items-center px-4 py-2 rounded-full bg-white shadow-md hover:shadow-lg transition-all duration-300 cursor-pointer border border-gray-200 hover:border-orange-300"
               >
                 <span className="mr-2">{service.icon}</span>
                 <span>{service.name}</span>

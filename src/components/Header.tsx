@@ -45,9 +45,9 @@ const Header = () => {
             href="/"
             className="text-xl font-display font-bold tracking-tight animate-fade-in flex items-center"
           >
-            <span className="text-indigo-700">HIRE</span>
-            <span className="text-xs bg-indigo-700 text-white px-1 mx-1">&lt;FULLSTACK&gt;</span>
-            <span className="text-indigo-700">DEVELOPERINDIA</span>
+            <span className="text-orange-500">HIRE</span>
+            <span className="text-xs bg-orange-500 text-white px-1 mx-1">&lt;FULLSTACK&gt;</span>
+            <span className="text-orange-500">DEVELOPERINDIA</span>
           </a>
 
           {/* Desktop Navigation */}
